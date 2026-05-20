@@ -19,4 +19,4 @@ Spring Boot 4.0.6 / Java 17 project. Minimal skeleton — only the boot class an
 - **Java 17** — no record/pattern-matching lint restrictions; feel free to use modern Java.
 - `application.properties` currently only has `spring.application.name=repaso-ia`.
 - No CI, no lint/format config, no Thymeleaf templates or JPA entities yet.
-- **UI/UX Directive** - views must use Tailwind CSS. The design approach must be strictly minimalist, clean, and modern.
+- **UI/UX Directive** - views must use Tailwind CSS. The design approach must be strictly minimalist, clean, and modern. Use Tailwind components if possible.

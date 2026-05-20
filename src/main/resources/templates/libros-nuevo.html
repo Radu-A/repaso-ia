@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{layout :: layout(~{::title}, ~{::.content})}">
+<head>
+    <title th:text="${libro.id} == null ? 'Nuevo Libro' : 'Editar Libro'">Libro - PLAY</title>
+</head>
+<body>
+    <div class="content w-full max-w-lg mx-auto">
+        <div class="flex items-center justify-between mb-6">
+            <h1 class="text-3xl font-bold text-gray-900"
+                th:text="${libro.id} == null ? 'Nuevo Libro' : 'Editar Libro'"></h1>
+            <a th:href="@{/libros/menu}"
+               class="text-sm text-indigo-600 hover:text-indigo-900 font-medium transition-colors">
+                &larr; Volver al catálogo
+            </a>
+        </div>
+
+        <div class="bg-white rounded-lg shadow p-8">
+            <form th:action="@{/libros/guardar}" th:object="${libro}" method="post" class="space-y-5">
+                <input type="hidden" th:field="*{id}">
+
+                <div>
+                    <label for="titulo" class="block text-sm font-medium text-gray-700 mb-1">Título</label>
+                    <input type="text" id="titulo" th:field="*{titulo}"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                           placeholder="Título del libro" required>
+                </div>
+
+                <div>
+                    <label for="autor" class="block text-sm font-medium text-gray-700 mb-1">Autor</label>
+                    <input type="text" id="autor" th:field="*{autor}"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                           placeholder="Nombre del autor" required>
+                </div>
+
+                <div>
+                    <label for="genero" class="block text-sm font-medium text-gray-700 mb-1">Género</label>
+                    <select id="genero" th:field="*{genero}"
+                            class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white" required>
+                        <option value="">Selecciona un género</option>
+                        <option th:each="g : ${generos}" th:value="${g}" th:text="${g}"></option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="ejemplares" class="block text-sm font-medium text-gray-700 mb-1">Ejemplares</label>
+                    <input type="number" id="ejemplares" th:field="*{ejemplares}" min="0"
+                           class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+                           placeholder="Número de ejemplares" required>
+                </div>
+
+                <div class="flex gap-3 pt-2">
+                    <button type="submit"
+                            class="px-5 py-2.5 bg-indigo-600 text-white text-sm font-medium rounded-lg hover:bg-indigo-700 transition-colors">
+                        Guardar
+                    </button>
+                    <a th:href="@{/libros/menu}"
+                       class="px-5 py-2.5 border border-gray-300 text-gray-700 text-sm font-medium rounded-lg hover:bg-gray-50 transition-colors">
+                        Cancelar
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

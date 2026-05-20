@@ -21,11 +21,6 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping("/libros")
-    public String libros() {
-        return "libros";
-    }
-
     @GetMapping("/imagenes")
     public String imagenes() {
         return "imagenes";
