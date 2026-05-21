@@ -2,16 +2,29 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout :: layout(~{::title}, ~{::.content})}">
 <head>
-    <title>Loto - PLAY</title>
+    <title>Resultado Loto — PLAY</title>
 </head>
 <body>
-    <div class="content text-center">
-        <h1 class="text-3xl font-bold text-gray-900" th:text="${pais}">País</h1>
-        <p class="mt-3 text-gray-500" th:text="'Combinación de ' + ${count} + ' números del 1 al ' + ${max}">Combinación</p>
-        <div class="mt-6 flex justify-center gap-3">
-            <span th:each="num : ${combinacion}" class="inline-flex items-center justify-center w-12 h-12 bg-blue-600 text-white text-lg font-bold rounded-full" th:text="${num}">00</span>
+    <div class="content flex-1 flex flex-col items-center justify-center px-4 py-16">
+        <div class="max-w-md w-full text-center">
+            <span class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-amber-50 text-3xl mb-6">🎲</span>
+            <h1 class="text-2xl sm:text-3xl font-display font-bold text-neutral-800 mb-2" th:text="${pais}">País</h1>
+            <p class="text-neutral-400 text-sm mb-10" th:text="'Combinación de ' + ${count} + ' números del 1 al ' + ${max}">Combinación</p>
+
+            <div class="flex flex-wrap justify-center gap-3 mb-10">
+                <span th:each="num : ${combinacion}"
+                      class="inline-flex items-center justify-center w-14 h-14 bg-amber-500 text-white text-xl font-bold rounded-full shadow-sm shadow-amber-200"
+                      th:text="${num}">00</span>
+            </div>
+
+            <a href="/loto/menu"
+               class="inline-flex items-center gap-2 px-6 py-3 bg-white border border-neutral-200 text-neutral-600 font-medium rounded-xl hover:bg-neutral-100 hover:text-neutral-800 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                </svg>
+                Volver al menú
+            </a>
         </div>
-        <a href="/loto/menu" class="mt-8 inline-block px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition-colors font-medium">Volver al menú</a>
     </div>
 </body>
 </html>

@@ -2,33 +2,53 @@
 <html lang="es" xmlns:th="http://www.thymeleaf.org"
       th:replace="~{layout :: layout(~{::title}, ~{::.content})}">
 <head>
-    <title>Home - PLAY</title>
+    <title>PLAY — Entretenimiento</title>
 </head>
 <body>
-    <div class="content max-w-2xl mx-auto text-center">
-        <div class="flex items-center justify-center gap-3 mb-8">
-            <img src="/images/logo-sm.jpg" alt="Logo" class="h-14 w-auto rounded">
-            <span class="text-3xl font-bold text-gray-900 tracking-wide">PLAY</span>
+    <div class="content flex-1 flex flex-col items-center justify-center px-4 py-16 sm:py-24">
+        <div class="max-w-xl mx-auto text-center">
+            <div class="inline-flex items-center justify-center gap-3 mb-10">
+                <img src="/images/logo-sm.jpg" alt="PLAY" class="h-16 w-auto rounded-lg shadow-sm">
+            </div>
+
+            <h1 class="text-4xl sm:text-5xl font-display font-bold text-neutral-800 tracking-tight mb-4">
+                Bienvenido a <span class="text-amber-600">PLAY</span>
+            </h1>
+            <p class="text-neutral-500 text-lg leading-relaxed mb-14 max-w-md mx-auto">
+                Tu espacio de juegos, cultura y entretenimiento
+            </p>
+
+            <div class="grid sm:grid-cols-3 gap-5">
+                <a href="/loto/menu"
+                   class="group flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-neutral-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-300">
+                    <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-50 text-2xl group-hover:scale-110 transition-transform">
+                        🎲
+                    </span>
+                    <span class="font-display font-semibold text-neutral-700 text-sm">Loto</span>
+                    <span class="text-xs text-neutral-400">Prueba tu suerte</span>
+                </a>
+
+                <a href="/imagenes"
+                   class="group flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-neutral-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-300">
+                    <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-50 text-2xl group-hover:scale-110 transition-transform">
+                        🧠
+                    </span>
+                    <span class="font-display font-semibold text-neutral-700 text-sm">Capitales</span>
+                    <span class="text-xs text-neutral-400">Demuestra lo que sabes</span>
+                </a>
+
+                <a href="/libros/menu"
+                   class="group flex flex-col items-center gap-3 p-6 bg-white rounded-2xl border border-neutral-100 shadow-sm hover:shadow-md hover:border-amber-200 transition-all duration-300">
+                    <span class="w-12 h-12 flex items-center justify-center rounded-xl bg-amber-50 text-2xl group-hover:scale-110 transition-transform">
+                        📚
+                    </span>
+                    <span class="font-display font-semibold text-neutral-700 text-sm">Libros</span>
+                    <span class="text-xs text-neutral-400">Catálogo literario</span>
+                </a>
+            </div>
+
+            <p class="mt-14 text-sm italic text-neutral-400 font-display" th:text="${proverbio}"></p>
         </div>
-
-        <div class="space-y-6 text-left">
-            <div>
-                <p class="text-lg font-semibold text-gray-800">🎲 Desafía a la Suerte</p>
-                <p class="text-gray-600 mt-1">¿Te sientes con racha hoy? Pásate por nuestro juego de azar. Relájate, prueba tu fortuna y descubre si el destino está de tu lado en esta sesión. ¡Quién sabe qué sorpresas te esperan!</p>
-            </div>
-
-            <div>
-                <p class="text-lg font-semibold text-gray-800">🧠 Demuestra lo que Sabes</p>
-                <p class="text-gray-600 mt-1">Si lo tuyo es la competencia y el conocimiento, nuestro juego de cultura general es tu parada obligatoria. Pon a prueba tu mente con preguntas que desafiarán tu memoria y curiosidad sobre el mundo. ¿Te animas a conseguir la puntuación más alta?</p>
-            </div>
-
-            <div>
-                <p class="text-lg font-semibold text-gray-800">📚 Piérdete entre Páginas</p>
-                <p class="text-gray-600 mt-1">Si buscas un momento de calma, inspiración o una buena historia, explora nuestro catálogo de libros. Una cuidada selección esperándote para que encuentres tu próxima gran lectura o ese dato fascinante que te falta.</p>
-            </div>
-        </div>
-
-        <p class="mt-8 italic text-gray-500" th:text="${proverbio}"></p>
     </div>
 </body>
 </html>
