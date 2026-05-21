@@ -22,7 +22,7 @@ public class LotoController {
 
     @GetMapping("/menu")
     public String menu() {
-        return "loto-menu";
+        return "loto/menu";
     }
 
     @GetMapping("/genera/{max}/{count}/{pais}")
@@ -33,6 +33,6 @@ public class LotoController {
         model.addAttribute("combinacion", combinacion);
         model.addAttribute("max", max);
         model.addAttribute("count", count);
-        return "loto-genera";
+        return "loto/genera";
     }
 }

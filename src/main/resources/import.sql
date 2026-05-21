@@ -23,3 +23,14 @@ INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('American Gods', 
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Steve Jobs', 'Walter Isaacson', 4, 'BIOGRAFIA');
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('El diario de Ana Frank', 'Ana Frank', 5, 'BIOGRAFIA');
 INSERT INTO libros (titulo, autor, ejemplares, genero) VALUES ('Leonardo da Vinci', 'Walter Isaacson', 3, 'BIOGRAFIA');
+
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Roma', '/images/roma.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Tokio', '/images/tokio.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Sevilla', '/images/sevilla.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Vancouver', '/images/vancouver.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Pekín', '/images/pekin.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Nueva York', '/images/nueva-york.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('París', '/images/paris.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Nueva Delhi', '/images/nueva-dehli.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Bogotá', '/images/bogota.jpg');
+INSERT INTO imágenes (ciudad, ruta_imagen) VALUES ('Canberra', '/images/canberra.jpg');

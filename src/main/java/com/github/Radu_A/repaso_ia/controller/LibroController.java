@@ -25,21 +25,21 @@ public class LibroController {
     @GetMapping("/menu")
     public String menu(Model model) {
         model.addAttribute("libros", libroService.findAll());
-        return "libros-menu";
+        return "libros/menu";
     }
 
     @GetMapping("/filtro/{genero}")
     public String filtro(@PathVariable String genero, Model model) {
         model.addAttribute("libros", libroService.findByGenero(genero));
         model.addAttribute("genero", genero);
-        return "libros-filtro";
+        return "libros/filtro";
     }
 
     @GetMapping("/nuevo")
     public String nuevo(Model model) {
         model.addAttribute("libro", new Libro());
         model.addAttribute("generos", Genero.values());
-        return "libros-nuevo";
+        return "libros/nuevo";
     }
 
     @GetMapping("/editar/{id}")
@@ -48,7 +48,7 @@ public class LibroController {
                 .map(libro -> {
                     model.addAttribute("libro", libro);
                     model.addAttribute("generos", Genero.values());
-                    return "libros-nuevo";
+                    return "libros/nuevo";
                 })
                 .orElse("redirect:/libros/menu");
     }
@@ -70,7 +70,7 @@ public class LibroController {
         return libroService.findById(id)
                 .map(libro -> {
                     model.addAttribute("libro", libro);
-                    return "libros-detalle";
+                    return "libros/detalle";
                 })
                 .orElse("redirect:/libros/menu");
     }
